@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import Form from './components/Form'
 import Headline from './components/Headline'
-import Text from './components/Text'
 import './App.css'
 
 class App extends Component {
   state = {
-    'headlineText': 'join the list',
+    headlineText: 'join the list',
   }
 
   onChange = (data) => {
     if (data === 2) {
       this.setState({
-        'headlineText': 'congratulations!',
+        headlineText: 'congratulations!',
       })
     }
   }
+
   render() {
     const { headlineText } = this.state
 
@@ -30,7 +30,6 @@ class App extends Component {
             callbackFromParent={ this.onChange }
           />
         </div>
-        
       </div>
     )
   }
