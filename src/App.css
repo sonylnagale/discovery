@@ -64,18 +64,6 @@
   font-style: bold;
 }
 
-
-h1 {
-  /* display:inline; */
-  font-family: 'ElaineD02-Regular';
-  font-size: 80px;
-  color: #B6FDBF;
-  line-height: 131px;
-  font-weight: normal;
-  /* float: left; */
-  margin: 50px;
-}
-
 p {
   font-family: 'AzoSans-Light';
   font-size: 12px;

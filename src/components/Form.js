@@ -11,7 +11,14 @@ class Form extends Component {
   }
 
   handleButtonClick = (event) => {
-    console.log(this.state.formText)
+    const { formText } = this.state
+
+    if (this.validateForm(formText)) {
+      this.setState({
+        'headlineText': 'Almost Done! Please Enter Your First and Last Name.',
+        'buttonText': 'Sign Up',
+      })
+    }
   }
 
   handleFormChange = (event) => {
@@ -21,6 +28,9 @@ class Form extends Component {
     console.log(event.target.value)
   }
 
+  validateForm  = (value) => {
+    return true
+  }
 
   render() {
     const { buttonText, formText, headlineText } = this.state
