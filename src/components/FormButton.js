@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Button = styled.input`
+const Button = styled.button`
   background-color: #ED1F34;
   border-radius: 5px;
   width: 150px;
@@ -15,10 +15,13 @@ const Button = styled.input`
   line-height: 24px;
   margin-left: 15px;
   text-transform: uppercase;
+  cursor: pointer;
 `
 
 const FormButton = (props) => (
-  <Button value={ props.title } />
+  <Button
+    onClick={ props.onClick }
+  >{ props.title }</Button>
 )
 
 export default FormButton

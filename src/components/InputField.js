@@ -15,6 +15,7 @@ const InputField = (props) => (
     className="field"
     type="text"
     placeholder={ props.placeholder }
+    onChange={ props.onChange }
   />
 )
 

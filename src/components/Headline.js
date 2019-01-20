@@ -1,17 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const H2 = styled.h2`
-  font-family: 'AzoSans-Bold';
-  font-size: 24px;
-  color: #94AEBF;
-  text-align: left;
-  line-height: 30px;
-  text-transform: uppercase;
+const H1 = styled.h1`
+  /* display:inline; */
+  font-family: 'ElaineD02-Regular';
+  font-size: 80px;
+  color: #B6FDBF;
+  line-height: 131px;
+  font-weight: normal;
+  /* float: left; */
+  margin: 50px;
 `
 
 const Headline = (props) => (
-  <H2>{ props.value }</H2>
+  <H1>{ props.value }</H1>
 )
 
 export default Headline

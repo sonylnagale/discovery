@@ -85,7 +85,7 @@ p {
 }
 
 
-input::placeholder {
+input::placeholder, input::first-line {
   opacity: 0.4;
   font-family: 'AzoSans-Regular';
   font-size: 24px;
