@@ -12,3 +12,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'Azo-Sans';
+  src: url('fonts/Azo-Sans/Azo-Sans.eot');
+  src: url('fonts/Azo-Sans/Azo-Sans.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Azo-Sans/Azo-Sans.woff') format('woff'),
+       url('fonts/Azo-Sans/Azo-Sans.ttf') format('truetype'),
+       url('fonts/Azo-Sans/Azo-Sans.svg#Azo-Sans') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Azo-Sans-Black';
+  src: url('fonts/Azo-Sans-Black/Azo-Sans-Black.eot');
+  src: url('fonts/Azo-Sans-Black/Azo-Sans-Black.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Azo-Sans-Black/Azo-Sans-Black.woff') format('woff'),
+       url('fonts/Azo-Sans-Black/Azo-Sans-Black.ttf') format('truetype'),
+       url('fonts/Azo-Sans-Black/Azo-Sans-Black.svg#Azo-Sans-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Azo-Sans-Bold';
+  src: url('fonts/Azo-Sans-Bold/Azo-Sans-Bold.eot');
+  src: url('fonts/Azo-Sans-Bold/Azo-Sans-Bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Azo-Sans-Bold/Azo-Sans-Bold.woff') format('woff'),
+       url('fonts/Azo-Sans-Bold/Azo-Sans-Bold.ttf') format('truetype'),
+       url('fonts/Azo-Sans-Bold/Azo-Sans-Bold.svg#Azo-Sans-Bold') format('svg');
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Azo-Sans-Light';
+  src: url('fonts/Azo-Sans-Light/Azo-Sans-Light.eot');
+  src: url('fonts/Azo-Sans-Light/Azo-Sans-Light.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Azo-Sans-Light/Azo-Sans-Light.woff') format('woff'),
+       url('fonts/Azo-Sans-Light/Azo-Sans-Light.ttf') format('truetype'),
+       url('fonts/Azo-Sans-Light/Azo-Sans-Light.svg#Azo-Sans-Light') format('svg');
+  font-weight: 200;
+  font-style: lighter;
+}
+
+@font-face {
+  font-family: 'Azo-Sans-Medium';
+  src: url('fonts/Azo-Sans-Medium/Azo-Sans-Medium.eot');
+  src: url('fonts/Azo-Sans-Medium/Azo-Sans-Medium.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Azo-Sans-Medium/Azo-Sans-Medium.woff') format('woff'),
+       url('fonts/Azo-Sans-Medium/Azo-Sans-Medium.ttf') format('truetype'),
+       url('fonts/Azo-Sans-Medium/Azo-Sans-Medium.svg#Azo-Sans-Medium') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Elaine_D02';
+  src: url('fonts/Elaine_D02/Elaine_D02.eot');
+  src: url('fonts/Elaine_D02/Elaine_D02.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Elaine_D02/Elaine_D02.woff') format('woff'),
+       url('fonts/Elaine_D02/Elaine_D02.ttf') format('truetype'),
+       url('fonts/Elaine_D02/Elaine_D02.svg#Elaine_D02') format('svg');
+  font-weight: 600;
+  font-style: bold;
+}
+
+p {
+  font-family: 'Azo-Sans-Black';
+}
