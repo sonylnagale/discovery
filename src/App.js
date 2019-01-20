@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Form from './components/Form'
 import Headline from './components/Headline'
+import Text from './components/Text'
 import './App.css'
 
 class App extends Component {
@@ -29,11 +30,7 @@ class App extends Component {
             callbackFromParent={ this.onChange }
           />
         </div>
-          <div>
-            <input type="checkbox" name="toc" className="toc" /><p>I agree to
-            receive information from Discovery Communications in accordance with
-            the following <u>Privacy Policy</u></p>
-          </div>
+        
       </div>
     )
   }
