@@ -64,13 +64,23 @@
   font-style: bold;
 }
 
-p {
-  font-family: 'AzoSans-Light';
-  font-size: 12px;
-  color: #888888;
-  line-height: 14px;
-  width: 375px;
+h1 {
+  font-size: 80px;
+  line-height: 131px;
+  margin: 30px 50px;
 }
+
+h2 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.field {
+  width: 460px;
+  height: 45px;
+  padding-left: 20px;
+}
+
 
 input::placeholder, input::first-line {
   opacity: 0.4;
@@ -80,6 +90,39 @@ input::placeholder, input::first-line {
   text-align: left;
   line-height: 45px;
 }
+
+@media all and (max-width: 1024px) {
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+    margin: 60px 50px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .field {
+    width: 374px;
+    height:45px;
+    padding-left: 15px;
+  }
+
+  input::placeholder, input::first-line {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+p {
+  font-family: 'AzoSans-Light';
+  font-size: 12px;
+  color: #888888;
+  line-height: 14px;
+  width: 375px;
+}
+
 
 .form {
   display: inline-block;

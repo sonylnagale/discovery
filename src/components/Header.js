@@ -3,10 +3,8 @@ import styled from 'styled-components'
 
 const H2 = styled.h2`
   font-family: 'AzoSans-Bold';
-  font-size: 24px;
   color: #94AEBF;
   text-align: left;
-  line-height: 30px;
   text-transform: uppercase;
 `
 

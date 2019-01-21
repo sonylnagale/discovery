@@ -41,6 +41,8 @@ class Form extends Component {
           headlineClass: 'final',
           phase:2,
         })
+
+        console.log('email',email,'first name', firstName, 'last name',lastName)
       }
     }
   }

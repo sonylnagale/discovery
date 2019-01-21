@@ -5,11 +5,8 @@ const H1 = styled.h1`
   display: inline-block;
   box-sizing: border-box;
   font-family: 'ElaineD02-Regular';
-  font-size: 80px;
   color: #B6FDBF;
-  line-height: 131px;
   font-weight: normal;
-  margin: 30px 50px;
   vertical-align: top;
 `
 
