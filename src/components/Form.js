@@ -62,9 +62,9 @@ class Form extends Component {
     const error = "0 0 3px 3px red"
     const clear = ""
 
-    let complete = true
 
     if (phase === 0) {
+      let complete = true
 
       if (!toc) {
         this.tocRef.current.style.boxShadow = error
@@ -83,21 +83,25 @@ class Form extends Component {
       return complete
     }
 
-    if (this.firstNameRef.current.length == 0) {
-      this.firstNameRef.current.style.boxShadow = error
-      complete = false
-    } else {
-      this.firstNameRef.current.style.boxShadow = clear
-    }
+    if (phase === 1) {
+      let complete = true
 
-    if (this.lastNameRef.current.length == 0) {
-      this.lastNameRef.current.style.boxShadow = error
-      complete = false
-    } else {
-      this.lastNameRef.current.style.boxShadow = clear
-    }
+      if (this.firstNameRef.current.value.length == 0) {
+        this.firstNameRef.current.style.boxShadow = error
+        complete = false
+      } else {
+        this.firstNameRef.current.style.boxShadow = clear
+      }
 
-    return complete
+      if (this.lastNameRef.current.value.length == 0) {
+        this.lastNameRef.current.style.boxShadow = error
+        complete = false
+      } else {
+        this.lastNameRef.current.style.boxShadow = clear
+      }
+
+      return complete
+    }
   }
 
   validateEmail = (value) => {
