@@ -12,7 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -25,6 +25,17 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.12.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-react": "^7.12.3",
+    "jest": "^23.6.0",
     "puppeteer": "^1.11.0"
   }
 }

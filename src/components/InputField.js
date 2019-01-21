@@ -19,6 +19,7 @@ const InputField = (props) => (
     placeholder={ props.placeholder }
     onChange={ props.onChange }
     ref={ props.refName }
+    data-test={ props['data-test'] }
   />
 )
 

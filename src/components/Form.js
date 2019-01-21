@@ -134,6 +134,7 @@ class Form extends Component {
           <FormButton
             title={ buttonText }
             onClick={ this.handleButtonClick }
+            data-test="next"
           />
 
           <div className="footer">
@@ -141,6 +142,7 @@ class Form extends Component {
               refName={ this.tocRef }
               name="toc"
               onChange={ this.handleFormChange }
+              data-test="toc"
             />
             <Text
               value={ this.renderText() }
@@ -149,7 +151,11 @@ class Form extends Component {
         </>
       )
     } else if (phase === 2) {
-      return null
+      return (
+        <Text
+          value={ this.renderText() }
+        />
+      )
     }
 
     return (
@@ -161,6 +167,7 @@ class Form extends Component {
           onChange={ this.handleFormChange }
           value={ firstName }
           refName={ this.firstNameRef }
+          data-test="firstName"
         />
         <InputField
           name="lastName"
@@ -169,11 +176,13 @@ class Form extends Component {
           onChange={ this.handleFormChange }
           value={ lastName }
           refName={ this.lastNameRef }
+          data-test="lastName"
         />
 
         <FormButton
           title={ buttonText }
           onClick={ this.handleButtonClick }
+          data-test="next"
         />
       </>
     )

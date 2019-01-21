@@ -14,7 +14,7 @@ const H1 = styled.h1`
 `
 
 const Headline = (props) => (
-  <H1>{ props.value }</H1>
+  <H1 data-test="headline">{ props.value }</H1>
 )
 
 export default Headline

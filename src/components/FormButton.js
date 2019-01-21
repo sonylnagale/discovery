@@ -21,6 +21,7 @@ const Button = styled.button`
 const FormButton = (props) => (
   <Button
     onClick={ props.onClick }
+    data-test={ props['data-test'] }
   >{ props.title }</Button>
 )
 

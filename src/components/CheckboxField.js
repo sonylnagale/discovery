@@ -19,6 +19,7 @@ const CheckboxField = (props) => (
     className={ props.className }
     type="checkbox"
     onChange={ props.onChange }
+    data-test={ props['data-test'] }
   />
 )
 

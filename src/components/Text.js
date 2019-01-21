@@ -13,7 +13,7 @@ const P = styled.p`
   margin: 0;
 `
 const Text = (props) => (
-  <P>{ Parser(props.value) }</P>
+  <P data-test="text">{ Parser(props.value) }</P>
 )
 
 export default Text
