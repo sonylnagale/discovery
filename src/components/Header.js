@@ -11,7 +11,7 @@ const H2 = styled.h2`
 `
 
 const Header = (props) => (
-  <H2>{ props.value }</H2>
+  <H2 className={ props.className }>{ props.value }</H2>
 )
 
 export default Header

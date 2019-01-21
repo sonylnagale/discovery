@@ -6,28 +6,29 @@ import Text from './Text'
 
 class Form extends Component {
   state = {
-    'buttonText':'next',
-    'formText':'enter email address',
-    'headlineText': 'Sign up for the TLC newsletter.',
-    'text': '<input type="checkbox" name="toc" className="toc" /> \
-              <p>I agree to receive information from Discovery Communications in \
-              accordance with the following <u>Privacy Policy</u></p>',
-    'finalText': 'Look out for the latest news on your favorite shows.',
-    'phase': 0,
+    buttonText: 'next',
+    formText: 'enter email address',
+    headlineText: 'Sign up for the TLC newsletter.',
+    text: '<input type="checkbox" name="toc" className="toc" />\n'
+              + 'I agree to receive information from Discovery Communications in\n'
+              + 'accordance with the following <u>Privacy Policy</u>',
+    finalText: 'Look out for the latest news on your favorite shows.',
+    phase: 0,
   }
 
-  handleButtonClick = (event) => {
+  handleButtonClick = () => {
     const { phase, formText } = this.state
     if (phase === 0 && this.validateForm(formText)) {
       this.setState({
-        'headlineText': 'Almost Done! Please Enter Your First and Last Name.',
-        'buttonText': 'Sign Up',
-        'phase':1,
+        headlineText: 'Almost Done! Please Enter Your First and Last Name.',
+        buttonText: 'Sign Up',
+        phase:1,
       })
     } else {
       this.setState({
-        'headlineText':'Thank You For Signing Up!',
-        'phase':2,
+        headlineText: 'Thank You For Signing Up!',
+        headlineClass: 'final',
+        phase:2,
       })
       this.props.onChange(2)
     }
@@ -37,7 +38,7 @@ class Form extends Component {
     const { phase } = this.state
 
     this.setState({
-      'formText': event.target.value,
+      formText: event.target.value,
     })
 
     if (this.phase === 2)  {
@@ -68,8 +69,10 @@ class Form extends Component {
       return (
         <>
           <InputField
+            className="field"
             placeholder={ formText }
             onChange={ this.handleFormChange }
+            data-test="email"
           />
 
           <FormButton
@@ -86,10 +89,13 @@ class Form extends Component {
       <>
         <InputField
           placeholder="First Name"
+          className="field name"
+          defaultValue=""
           onChange={ this.handleFormChange }
         />
         <InputField
           placeholder="Last Name"
+          className="field name"
           onChange={ this.handleFormChange }
         />
 
@@ -102,19 +108,21 @@ class Form extends Component {
   }
 
   render(props) {
-    const { headlineText } = this.state
+    const { headlineText, headlineClass } = this.state
 
     return (
       <>
         <Header
           value={ headlineText }
+          className={ headlineClass }
         />
 
         { this.renderForm() }
 
         <Text
           value={ this.renderText() }
-        />      </>
+        />
+      </>
     )
   }
 }

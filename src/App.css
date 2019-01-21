@@ -72,7 +72,6 @@ p {
   width: 375px;
 }
 
-
 input::placeholder, input::first-line {
   opacity: 0.4;
   font-family: 'AzoSans-Regular';
@@ -82,23 +81,20 @@ input::placeholder, input::first-line {
   line-height: 45px;
 }
 
-.headline {
-  display: inline;
-  float: left;
-  width: 400px;
-}
 .form {
-  float: left;
-  width: 650px;
-}
-
-.toc {
-  vertical-align: text-top;
-  width: 20px;
-  height: 40px;
-  float: left;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 input[type="checkbox"]:checked {
   background-color:  #fff;
+}
+
+.name {
+  width: 235px;
+  margin-right: 10px;
+}
+
+.final {
+  margin-top: 55px;
 }

@@ -12,7 +12,7 @@ const Input = styled.input`
 
 const InputField = (props) => (
   <Input
-    className="field"
+    className={ props.className }
     type="text"
     placeholder={ props.placeholder }
     onChange={ props.onChange }
