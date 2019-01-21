@@ -12,6 +12,8 @@ const Input = styled.input`
 
 const InputField = (props) => (
   <Input
+    name={ props.name }
+    value={ props.value }
     className={ props.className }
     type="text"
     placeholder={ props.placeholder }

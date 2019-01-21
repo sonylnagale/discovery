@@ -3,15 +3,18 @@ import InputField from './InputField'
 import FormButton from './FormButton'
 import Header from './Header'
 import Text from './Text'
+import CheckboxField from './CheckboxField'
 
 class Form extends Component {
   state = {
+    email: '',
+    firstName: '',
+    lastName: '',
+    toc: false,
     buttonText: 'next',
-    formText: 'enter email address',
     headlineText: 'Sign up for the TLC newsletter.',
-    text: '<input type="checkbox" name="toc" className="toc" />\n'
-              + 'I agree to receive information from Discovery Communications in\n'
-              + 'accordance with the following <u>Privacy Policy</u>',
+    text: 'I agree to receive information from Discovery Communications in\n'
+          + 'accordance with the following <u>Privacy Policy</u>',
     finalText: 'Look out for the latest news on your favorite shows.',
     phase: 0,
   }
@@ -36,9 +39,12 @@ class Form extends Component {
 
   handleFormChange = (event) => {
     const { phase } = this.state
-
+    const target = event.target
+    const name = target.name
+    const value = target.type === 'checkbox' ? target.checked : target.value
+console.log(name,value)
     this.setState({
-      formText: event.target.value,
+      [name]: value,
     })
 
     if (this.phase === 2)  {
@@ -64,15 +70,17 @@ class Form extends Component {
   }
 
   renderForm = () => {
-    const { formText, buttonText, phase } = this.state
+    const { buttonText, phase, email, firstName, lastName } = this.state
     if (phase === 0) {
       return (
         <>
           <InputField
+            name="email"
             className="field"
-            placeholder={ formText }
+            placeholder="enter email address"
             onChange={ this.handleFormChange }
             data-test="email"
+            value={ email }
           />
 
           <FormButton
@@ -88,15 +96,18 @@ class Form extends Component {
     return (
       <>
         <InputField
+          name="firstName"
           placeholder="First Name"
           className="field name"
-          defaultValue=""
           onChange={ this.handleFormChange }
+          value={ firstName}
         />
         <InputField
+          name="lastName"
           placeholder="Last Name"
           className="field name"
           onChange={ this.handleFormChange }
+          value={ lastName }
         />
 
         <FormButton
@@ -119,9 +130,15 @@ class Form extends Component {
 
         { this.renderForm() }
 
-        <Text
-          value={ this.renderText() }
-        />
+        <div className="footer">
+          <CheckboxField
+            name="toc"
+            onChange={ this.handleFormChange }
+          />
+          <Text
+            value={ this.renderText() }
+          />
+        </div>
       </>
     )
   }

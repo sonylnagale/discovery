@@ -7,6 +7,10 @@ const P = styled.p`
   font-size: 12px;
   color: #888888;
   line-height: 14px;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: text-top;
+  margin: 0;
 `
 const Text = (props) => (
   <P>{ Parser(props.value) }</P>
