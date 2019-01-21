@@ -9,8 +9,11 @@ const Checkbox = styled.input`
   padding-top: 10px;
 `
 
+const ref = React.createRef();
+
 const CheckboxField = (props) => (
   <Checkbox
+    ref={ props.refName }
     name={ props.name }
     value={ props.value }
     className={ props.className }

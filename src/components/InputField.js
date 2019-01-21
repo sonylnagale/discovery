@@ -18,6 +18,7 @@ const InputField = (props) => (
     type="text"
     placeholder={ props.placeholder }
     onChange={ props.onChange }
+    ref={ props.refName }
   />
 )
 

@@ -19,3 +19,12 @@ beforeAll(async () => {
 afterAll(() => {
   browser.close()
 })
+
+describe("Enter Email", () => {
+  test("Email is empty", async () => {
+    await page.goto(APP)
+    await page.waitForSelector("[data-test=email]")
+    const email = await page.$eval("[data-test=email]", el => el.textContent)
+    expect(email.length).to.be(0)
+  }, 16000)
+})

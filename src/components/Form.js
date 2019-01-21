@@ -19,21 +19,29 @@ class Form extends Component {
     phase: 0,
   }
 
+  tocRef = React.createRef()
+  emailRef = React.createRef()
+  firstNameRef = React.createRef()
+  lastNameRef = React.createRef()
+
   handleButtonClick = () => {
-    const { phase, formText } = this.state
-    if (phase === 0 && this.validateForm(formText)) {
-      this.setState({
-        headlineText: 'Almost Done! Please Enter Your First and Last Name.',
-        buttonText: 'Sign Up',
-        phase:1,
-      })
+    const { phase, email, firstName, lastName, toc } = this.state
+    if (phase === 0) {
+      if (this.validateForm(0)) {
+        this.setState({
+          headlineText: 'Almost Done! Please Enter Your First and Last Name.',
+          buttonText: 'Sign Up',
+          phase:1,
+        })
+      }
     } else {
-      this.setState({
-        headlineText: 'Thank You For Signing Up!',
-        headlineClass: 'final',
-        phase:2,
-      })
-      this.props.onChange(2)
+      if (this.validateForm(1)) {
+        this.setState({
+          headlineText: 'Thank You For Signing Up!',
+          headlineClass: 'final',
+          phase:2,
+        })
+      }
     }
   }
 
@@ -42,18 +50,57 @@ class Form extends Component {
     const target = event.target
     const name = target.name
     const value = target.type === 'checkbox' ? target.checked : target.value
-console.log(name,value)
+
     this.setState({
       [name]: value,
     })
-
-    if (this.phase === 2)  {
-
-    }
   }
 
-  validateForm = (value) => {
-    return true
+  validateForm = (phase) => {
+    const { email, firstName, lastName, toc } = this.state
+
+    const error = "0 0 3px 3px red"
+    const clear = ""
+
+    let complete = true
+
+    if (phase === 0) {
+
+      if (!toc) {
+        this.tocRef.current.style.boxShadow = error
+        complete = false
+      } else {
+        this.tocRef.current.style.boxShadow = clear
+      }
+
+      if (!this.validateEmail(email)) {
+        this.emailRef.current.style.boxShadow = error
+        complete = false
+      } else {
+        this.emailRef.current.style.boxShadow = clear
+      }
+
+      return complete
+    }
+
+    if (this.firstNameRef.current.length == 0) {
+      this.firstNameRef.current.style.boxShadow = error
+      complete = false
+    } else {
+      this.firstNameRef.current.style.boxShadow = clear
+    }
+
+    if (this.lastNameRef.current.length == 0) {
+      this.lastNameRef.current.style.boxShadow = error
+      complete = false
+    } else {
+      this.lastNameRef.current.style.boxShadow = clear
+    }
+
+    return complete
+  }
+
+  validateEmail = (value) => {
     return value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
   }
 
@@ -81,12 +128,24 @@ console.log(name,value)
             onChange={ this.handleFormChange }
             data-test="email"
             value={ email }
+            refName={ this.emailRef }
           />
 
           <FormButton
             title={ buttonText }
             onClick={ this.handleButtonClick }
           />
+
+          <div className="footer">
+            <CheckboxField
+              refName={ this.tocRef }
+              name="toc"
+              onChange={ this.handleFormChange }
+            />
+            <Text
+              value={ this.renderText() }
+            />
+          </div>
         </>
       )
     } else if (phase === 2) {
@@ -100,7 +159,8 @@ console.log(name,value)
           placeholder="First Name"
           className="field name"
           onChange={ this.handleFormChange }
-          value={ firstName}
+          value={ firstName }
+          refName={ this.firstNameRef }
         />
         <InputField
           name="lastName"
@@ -108,6 +168,7 @@ console.log(name,value)
           className="field name"
           onChange={ this.handleFormChange }
           value={ lastName }
+          refName={ this.lastNameRef }
         />
 
         <FormButton
@@ -130,15 +191,6 @@ console.log(name,value)
 
         { this.renderForm() }
 
-        <div className="footer">
-          <CheckboxField
-            name="toc"
-            onChange={ this.handleFormChange }
-          />
-          <Text
-            value={ this.renderText() }
-          />
-        </div>
       </>
     )
   }

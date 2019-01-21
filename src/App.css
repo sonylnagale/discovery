@@ -98,3 +98,7 @@ input[type="checkbox"]:checked {
 .final {
   margin-top: 55px;
 }
+
+.error {
+  border: 2px solid #F00;
+}
